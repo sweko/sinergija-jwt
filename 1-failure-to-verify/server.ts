@@ -1,7 +1,7 @@
 const jwtKind = process.argv[2]
 const jwt = require(`./${jwtKind}-jwt`).jwt;
 
-const verify = (token: string) => {
+const decode = (token: string) => {
     const [headerB64, payloadB64, signatureB64] = token.split('.');
     const headerStr = Buffer.from(headerB64, 'base64').toString();
     const header = JSON.parse(headerStr);
@@ -11,7 +11,7 @@ const verify = (token: string) => {
 }
 
 
-const userData = verify(jwt);
+const userData = decode(jwt);
 const adminString = userData.admin 
     ? 'the user \x1b[31mis\x1b[0m an admin'
     :  'the user \x1b[32mis not\x1b[0m an admin';

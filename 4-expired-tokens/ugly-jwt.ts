@@ -1,5 +1,5 @@
 import { toBase64 } from "../0-making-jwts-sensitive-data/utils"
-import { jwt as goodJwt } from "./good-jwt"
+import { jwt as goodJwt } from "./fresh-jwt"
 
 const [goodHeader, goodPayload, goodSignature] = goodJwt.split('.');
 

@@ -16,6 +16,7 @@ const verifications: Record<string, (token: string, keys: any) => boolean> = {
     }
 }
 
+// the "decode" problem is now fixed - we renamed it to "verify"
 const verify = (token: string) => {
     const [headerB64, payloadB64, signatureB64] = token.split('.');
     const headerStr = Buffer.from(headerB64, 'base64').toString();

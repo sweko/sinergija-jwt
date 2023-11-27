@@ -9,7 +9,8 @@ export function hmac(data: string, secret: string, algorithm: string) {
 
 export function encodeSignedHmac<Header, Payload>(payload: Payload) {
     // Your secret key
-    const secretKey = 'my-sinergija-secret'; // please, use a better secret key and keep it safe!
+    // please, use a better secret key and keep it safe!
+    const secretKey = 'my-sinergija-secret'; 
 
     // HMAC algorithm
     const algorithm = 'sha256';
